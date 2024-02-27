@@ -42,3 +42,29 @@
   </div>
 </div>
 </div>
+
+
+<?php if (!empty($counties)): ?>
+
+<?php if (is_array($counties)): ?>
+    <?php foreach ($counties as $county_item): ?>
+        <div class="d-flex justify-content-center">
+            <h4><?= esc($county_item['county_code']) ?></h4>
+            <?= esc($county_item['county_name']) ?>
+        </div>
+    <?php endforeach ?>
+<?php else: ?>
+    <div class="d-flex justify-content-center">
+        <h4><?= esc($counties['county_code']) ?></h4>
+        <?= esc($counties['county_name']) ?>
+    </div>
+<?php endif ?>
+
+<?php else: ?>
+
+<h3>No News</h3>
+
+<p>Unable to find any news for you.</p>
+
+<?php endif ?>
+

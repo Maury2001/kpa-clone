@@ -10,3 +10,6 @@ class Home extends BaseController
         .view('welcome_message');
     }
 }
+
+
+

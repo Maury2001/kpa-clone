@@ -1,6 +1,6 @@
 <div class="position-absolute top-50 start-50 translate-middle">
 <div class="card" style="width: 70rem;">
-    <div class="d-flex justify-content-around card-title">
+    <div class="d-flex justify-content-around shadow-lg rounded card-title">
         <h4 class='p-3'>Members</h4>
 
         <div class="btn-group p-3" role="group" aria-label="Basic outlined example">
