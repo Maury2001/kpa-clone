@@ -27,7 +27,7 @@
                 <?= lang('Errors.sorryCannotFind') ?>
             <?php endif; ?>
                     </p>
-                    <a href="news" class="btn btn-primary">Go Home</a>
+                    <a href="/" class="btn btn-primary">Go Home</a>
                 </div>
 
             </div>

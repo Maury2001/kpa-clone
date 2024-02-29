@@ -9,11 +9,27 @@ class CountiesModel extends Model
 {
     protected $table = 'counties';
 
-    protected $allowedFields = ['county_code','county_name','slug'];
+    protected $allowedFields = ['county_code', 'county_name', 'slug'];
 
-    public function getCounty($slug = false)
+    public function getCounty($slug = "")
     {
-        if ($slug === false) {
+        if ($slug === "") {
+            return $this->findAll();
+        }
+
+        return $this->where(['slug' => $slug])->first();
+    }
+}
+
+class SpecializationsModel extends Model
+{
+    protected $table = 'specializations';
+
+    protected $allowedFields = ['name', 'description'];
+
+    public function getCounty($slug = "")
+    {
+        if ($slug === "") {
             return $this->findAll();
         }
 

@@ -11,8 +11,8 @@
         crossorigin="anonymous"></script>
     <script>
         function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("mySidenav").style.width = "300px";
+            document.getElementById("main").style.marginLeft = "300px";
         }
 
         function closeNav() {
@@ -39,15 +39,17 @@
 
         .sidenav a {
             padding: 8px 8px 12px 32px;
+            margin-bottom: 20px;
             text-decoration: none;
             font-size: 15px;
             color: #818181;
             display: block;
             transition: 0.3s;
+            text-align: center
         }
 
         .sidenav a:hover {
-            color: #f1f1f1;
+            color: #a8a8a8;
         }
 
         .sidenav .closebtn {
@@ -80,7 +82,11 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">
+        <div class="d-flex justify-content-center">
+        <img src="/kpa.png" alt="kpa" style="width:100px;height:80px;padding:10px;margin:10px;margin: bottom 10px;">
+        </div>
+        
+        <a href="/">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-speedometer2" viewBox="0 0 16 16">
                 <path
@@ -249,7 +255,7 @@
         <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
         <div class="dropdown float-end">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+            <a class="btn btn-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-person-circle" viewBox="0 0 16 16">
