@@ -22,11 +22,12 @@ $routes->get('statuses', 'Menu::statuses');
 $routes->get('receipts', 'Menu::receipts');
 // $routes->get('roles','Menu::roles');
 
-$routes->get('login', 'Auth::log');
-$routes->get('register', 'Auth::reg');
+$routes->match(['get', 'post'],'login', 'Auth::log');
+$routes->match(['get', 'post'], 'register', 'Auth::reg');
 
 $routes->get('newcounty', [Menu::class, 'new']); // Add this line
 $routes->post('newcounty', [Menu::class, 'newcounty']);
 
 $routes->get('specializations', 'Menu::specializations');
 $routes->get('newspecializations', 'Menu::newspecializations');
+

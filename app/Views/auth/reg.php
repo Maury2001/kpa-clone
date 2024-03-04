@@ -18,7 +18,8 @@
         <!-- Pills content -->
         <div class="tab-content">
             <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-                <form>
+                <form method='post' action="/register">
+                    <?= csrf_field() ?>
                     <div class="text-center mb-3">
                         <p>Sign up with:</p>
                         <button type="button" class="btn btn-link btn-floating mx-1">
@@ -57,37 +58,57 @@
                     <p class="text-center">or:</p>
 
                     <!-- Name input -->
-                    <div class="form-outline mb-4">
-                        <input type="text" id="registerName" class="form-control" />
-                        <label class="form-label" for="registerName">Name</label>
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <div class="form-outline mb-4">
+                                <input type="text" id="first_name" name="first_name" class="form-control"
+                                    value="<?= set_value('first_name')?>" />
+                                <label class="form-label" for="registerName">First Name</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <!-- Username input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="last_name" name="last_name" class="form-control"
+                                    value="<?= set_value('last_name')?>" />
+                                <label class="form-label" for="registerUsername">Last Name</label>
+                            </div>
+
+                        </div>
                     </div>
 
-                    <!-- Username input -->
-                    <div class="form-outline mb-4">
-                        <input type="text" id="registerUsername" class="form-control" />
-                        <label class="form-label" for="registerUsername">Username</label>
-                    </div>
+
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="email" id="registerEmail" class="form-control" />
+                        <input type="email" id="email" name="email" class="form-control"
+                            value="<?= set_value('email')?>" />
                         <label class="form-label" for="registerEmail">Email</label>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                        <input type="password" id="registerPassword" class="form-control" />
+                        <input type="password" id="password" name="password" class="form-control" value="" />
                         <label class="form-label" for="registerPassword">Password</label>
                     </div>
 
                     <!-- Repeat Password input -->
                     <div class="form-outline mb-4">
-                        <input type="password" id="registerRepeatPassword" class="form-control" />
-                        <label class="form-label" for="registerRepeatPassword">Repeat password</label>
+                        <input type="password" id="password_confirm" name="password_confirm" class="form-control"
+                            value="" />
+                        <label class="form-label" for="registerRepeatPassword">Confirm password</label>
                     </div>
 
+                    <?php if (isset($validation)):?>
+                    <div class="col-12">
+                        <div class="alert alert-danger">
+                            <?= $validation->listErrors() ?>
+
+                        </div>
+                    </div>
+                    <?php endif; ?>
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-dark btn-block mb-3">Sign in</button>
+                    <button type="submit" class="btn btn-dark btn-block mb-3">Sign Up</button>
                 </form>
             </div>
 

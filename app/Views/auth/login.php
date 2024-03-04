@@ -18,7 +18,13 @@
         <!-- Pills content -->
         <div class="tab-content">
             <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-                <form>
+                <?php if (session()->get('success')):?>
+                    <div class='alert alert-success'>
+                        <?= session()->get('success') ?>
+                    </div>
+                    <?php endif; ?>
+                <form method='post' action='login'>
+                <?= csrf_field() ?>
                     <div class="text-center mb-3">
                         <p>Sign in with:</p>
                         <button type="button" class="btn btn-link btn-floating mx-1">
@@ -58,13 +64,13 @@
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="email" id="loginName" class="form-control" />
-                        <label class="form-label" for="loginName">Email or username</label>
+                        <input type="email" id="loginName" class="form-control" value="<?= set_value('email')?>" />
+                        <label class="form-label" for="loginName">Email</label>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                        <input type="password" id="loginPassword" class="form-control" />
+                        <input type="password" id="loginPassword" class="form-control" value="<?= set_value('password')?>" />
                         <label class="form-label" for="loginPassword">Password</label>
                     </div>
 
@@ -84,12 +90,21 @@
                         </div>
                     </div>
 
+                    <?php if (isset($validation)):?>
+                    <div class="col-12">
+                        <div class="alert alert-danger">
+                            <?= $validation->listErrors() ?>
+
+                        </div>
+                    </div>
+                    <?php endif; ?>
+
                     <!-- Submit button -->
                     <button type="submit" class="btn btn-dark btn-block mb-4">Sign in</button>
 
                     <!-- Register buttons -->
                     <div class="text-center">
-                        <p>Not a member? <a href="#!">Register</a></p>
+                        <p>Not a member? <a href="register">Register</a></p>
                     </div>
                 </form>
             </div>
