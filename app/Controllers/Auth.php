@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\UserModel;
 
 
 class Auth extends BaseController
 {
-    public function log(): string
+    public function log()
     {
         helper('form');
 
@@ -28,34 +29,40 @@ class Auth extends BaseController
                 ];
 
     
-            if (! $this->validate($rules,$errors)) {
+            if (!$this->validate($rules,$errors)) {
                 $data['validation'] = $this->validator;
                 // handle validation errors if needed
             }else{
 
                 $model = new UserModel();
 
-            $newData = [
-                
-                'email'         => $this->request->getVar('email'),
-                'password'      => $this->request->getVar('password')
-            ];
+                $user = $model->where('email',$this->request->getVar('email'))
+                              ->first();
 
-            // Hash the password before saving
-            // $newData['password'] = password_hash($newData['password'], PASSWORD_DEFAULT);
+                              
+                $this ->setUserSession($user);
 
-            // $model->save($newData);
-            
-            // $session = session();
-            // $session->setFlashdata('success', 'Successful Registration');
+                return redirect()->to('/');
 
-            // return redirect()->to('/login'); // added semicolon at the end
             }
         }
 
 
-        return view('templates/header')
-            . view('auth/login', $data);
+        return view('templates/header',$data)
+            . view('auth/login');
+    }
+
+    public function setUserSession($user)
+     {
+        $data=[
+            'id'=> $user['id'],
+            'first_name'=>$user['first_name'],
+            'last_name'=>$user['last_name'],
+            'email'=>$user['email'],
+            'isLoggedIn'=>true,
+        ];
+
+        session()->set($data);
     }
 
     public function reg()

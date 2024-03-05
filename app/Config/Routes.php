@@ -6,7 +6,7 @@ use App\Controllers\Menu;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+$routes->match(['get', 'post'],'/', 'Home::index');
 $routes->get('members', 'Menu::index');
 $routes->get('roles', 'Menu::roles');
 $routes->get('branches', 'Menu::branches');

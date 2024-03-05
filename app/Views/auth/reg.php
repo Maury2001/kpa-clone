@@ -113,6 +113,6 @@
             </div>
 
         </div>
-        <!-- Pills content -->
+      
     </div>
 </div>

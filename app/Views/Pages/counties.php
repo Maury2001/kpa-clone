@@ -7,9 +7,7 @@ usort($counties, function($a, $b) {
 });
 ?>
 <style>
-.card{
- 
-}
+.card {}
 </style>
 
 

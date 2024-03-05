@@ -19,12 +19,12 @@
         <div class="tab-content">
             <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
                 <?php if (session()->get('success')):?>
-                    <div class='alert alert-success'>
-                        <?= session()->get('success') ?>
-                    </div>
-                    <?php endif; ?>
-                <form method='post' action='login'>
-                <?= csrf_field() ?>
+                <div class='alert alert-success'>
+                    <?= session()->get('success') ?>
+                </div>
+                <?php endif; ?>
+                <form method='post' action='/'>
+                    <?= csrf_field() ?>
                     <div class="text-center mb-3">
                         <p>Sign in with:</p>
                         <button type="button" class="btn btn-link btn-floating mx-1">
@@ -70,25 +70,13 @@
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                        <input type="password" id="loginPassword" class="form-control" value="<?= set_value('password')?>" />
+                        <input type="password" id="loginPassword" class="form-control" value=""
+                            autocomplete="new-password" />
                         <label class="form-label" for="loginPassword">Password</label>
                     </div>
 
-                    <!-- 2 column grid layout -->
-                    <div class="row mb-4">
-                        <div class="col-md-6 d-flex justify-content-center">
-                            <!-- Checkbox -->
-                            <div class="form-check mb-3 mb-md-0">
-                                <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
-                                <label class="form-check-label" for="loginCheck"> Remember me </label>
-                            </div>
-                        </div>
 
-                        <div class="col-md-6 d-flex justify-content-center">
-                            <!-- Simple link -->
-                            <a href="#!">Forgot password?</a>
-                        </div>
-                    </div>
+
 
                     <?php if (isset($validation)):?>
                     <div class="col-12">

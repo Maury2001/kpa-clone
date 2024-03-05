@@ -16,7 +16,7 @@
         <div class="card" style="width: 90rem;">
             <div class="card-body">
                 <div class="d-flex justify-content-between card-title bg-dark shadow rounded p-1">
-                    <h4 class="text-light m-2">Welcome</h4>
+                    <h4 class="text-light m-2">Welcome <?= session()->get('first_name')?></h4>
                     <button type="button" class="btn btn-outline-primary m-2">Update my Profile</button>
                 </div>
 
@@ -26,7 +26,7 @@
                         <div class="col">
                             <ul>
                                 <li>Member No:</li>
-                                <li>Full Name:</li>
+                                <li>Full Name: <?=session()->get('first_name')?></li>
                                 <li>Email:</li>
                                 <li>Phone:</li>
                                 <li>Id Number:</li>

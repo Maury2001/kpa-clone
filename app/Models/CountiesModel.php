@@ -21,18 +21,3 @@ class CountiesModel extends Model
     }
 }
 
-class SpecializationsModel extends Model
-{
-    protected $table = 'specializations';
-
-    protected $allowedFields = ['name', 'description'];
-
-    public function getCounty($slug = "")
-    {
-        if ($slug === "") {
-            return $this->findAll();
-        }
-
-        return $this->where(['slug' => $slug])->first();
-    }
-}

@@ -3,7 +3,7 @@ namespace App\Validation;
 
 use App\Models\UserModel;
 
-class UserRoles
+class UserRules
 {
     public function validateUser(string $str, string $fields, array $data)
     {
