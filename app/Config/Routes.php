@@ -29,5 +29,8 @@ $routes->get('newcounty', [Menu::class, 'new']); // Add this line
 $routes->post('newcounty', [Menu::class, 'newcounty']);
 
 $routes->get('specializations', 'Menu::specializations');
-$routes->get('newspecializations', 'Menu::newspecializations');
+
+
+$routes->get('newspecializations', 'Menu::newspecialization');
+$routes->post('newspecializations', 'Menu::newspec');
 

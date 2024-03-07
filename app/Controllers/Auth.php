@@ -29,10 +29,11 @@ class Auth extends BaseController
                 ];
 
     
-            if (!$this->validate($rules,$errors)) {
+            if (!$this->validate($rules , $errors))
+             {
                 $data['validation'] = $this->validator;
                 // handle validation errors if needed
-            }else{
+             }else{
 
                 $model = new UserModel();
 
@@ -49,10 +50,10 @@ class Auth extends BaseController
 
 
         return view('templates/header',$data)
-            . view('auth/login');
+            . view('auth/log');
     }
 
-    public function setUserSession($user)
+    private function setUserSession($user)
      {
         $data=[
             'id'=> $user['id'],

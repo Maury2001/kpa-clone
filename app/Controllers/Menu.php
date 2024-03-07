@@ -77,6 +77,8 @@ class Menu extends BaseController
 
         return view('templates/header') . view('Pages/success');
     }
+
+
     public function designations(): string
     {
         return view('templates/header')
@@ -130,36 +132,47 @@ class Menu extends BaseController
     // Controller method for handling new specialization form submission
 public function newspecialization()
 {
+    //dd("hapa");
     helper('form');
 
-    $data = $this->request->getPost(['name', 'description']);
+   
 
-    // Validation rules
-    $validationRules = [
-        'name' => 'required|max_length[100]',
-        'description' => 'required',
-    ];
-
-    // Check validation
-    if (!$this->validate($validationRules)) {
-        return $this->newSpecialization(); // Redirect to the form with validation errors
-    }
-
-    // Get validated data
-    $post = $this->request->getPost();
-
-    // Save to database
-    $model = model('SpecializationsModel'); // Assuming your model is named SpecializationsModel
-    $model->save([
-        'name' => $post['name'],
-        'description' => $post['description'],
-    ]);
-
-    // Redirect or show success view
-    return redirect()->to('/specializations');
-
-    return view('templates/header') . view('Pages/newspecialization');
+    return view('templates/header') . view('Pages/nspec');
 }
+
+public function newspec(): string
+    {
+        helper('form');
+
+        $data = $this->request->getPost(['name', 'description']);
+
+        // Validation rules
+        $validationRules = [
+            'name' => 'required|max_length[100]',
+            'description' => 'required',
+        ];
+    
+        // Check validation
+        if (!$this->validate($validationRules)) {
+            return $this->newSpecialization(); // Redirect to the form with validation errors
+        }
+    
+        // Get validated data
+        $post = $this->request->getPost();
+    
+        // Save to database
+        $model = model(SpecializationsModel::class);
+
+        // $model = model('SpecializationsModel'); // Assuming your model is named SpecializationsModel
+        $model->save([
+            'name' => $post['name'],
+            'description' => $post['description'],
+        ]);
+    
+       
+
+        return view('templates/header') . view('Pages/successpec');
+    }
 
     public function statuses(): string
     {

@@ -64,28 +64,29 @@
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="email" id="loginName" class="form-control" value="<?= set_value('email')?>" />
+                        <input type="email" id="loginName" name="email" class="form-control"
+                            value="<?= set_value('email')?>" />
                         <label class="form-label" for="loginName">Email</label>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                        <input type="password" id="loginPassword" class="form-control" value=""
-                            autocomplete="new-password" />
+                        <input type="password" id="loginPassword" name="password" class="form-control"
+                            value="<?= set_value('password')?>" autocomplete="new-password" />
                         <label class="form-label" for="loginPassword">Password</label>
                     </div>
 
 
 
 
-                    <?php if (isset($validation)):?>
+                    <?php if (isset($validation)): ?>
                     <div class="col-12">
                         <div class="alert alert-danger">
                             <?= $validation->listErrors() ?>
-
                         </div>
                     </div>
                     <?php endif; ?>
+
 
                     <!-- Submit button -->
                     <button type="submit" class="btn btn-dark btn-block mb-4">Sign in</button>
