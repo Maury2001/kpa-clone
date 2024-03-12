@@ -33,13 +33,14 @@
         left: 0;
         background-color: #111;
         overflow-x: hidden;
+        overflow-y: hidden;
         transition: 0.5s;
         padding-top: 60px;
     }
 
     .sidenav a {
         padding: 8px 8px 12px 32px;
-        margin-bottom: 20px;
+        
         margin-left: 10px;
         text-decoration: none;
         font-size: 15px;
@@ -96,7 +97,7 @@
                     d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A8 8 0 0 1 0 10m8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3" />
             </svg>
             Dashboard</a>
-        <div class="dropdown p-2">
+        <div class="dropdown">
             <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
                     class="bi bi-menu-button" viewBox="0 0 16 16">
@@ -107,7 +108,7 @@
                 </svg> Menu
             </a>
 
-            <ul class="dropdown-menu bg-dark w-full">
+            <ul class="dropdown-menu bg-dark overflow-auto w-full">
                 <li><a class="dropdown-item" href="members">
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
                             class="bi bi-file-earmark-person" viewBox="0 0 16 16">

@@ -1,9 +1,7 @@
-
-
 <div class="d-flex justify-content-center m-4">
     <h4 class="fst-italic">BRANCHES</h4>
 </div>
-<hr class="mx-auto" style="width: 70%;"/>
+<hr class="mx-auto" style="width: 70%;" />
 
 <div class="container text-center overflow-auto">
     <div class="row mb-4">

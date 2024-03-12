@@ -64,15 +64,15 @@
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="email" id="loginName" name="email" class="form-control"
+                        <input type="email" id="loginName" required name="email" class="form-control"
                             value="<?= set_value('email')?>" />
                         <label class="form-label" for="loginName">Email</label>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                        <input type="password" id="loginPassword" name="password" class="form-control"
-                            value="<?= set_value('password')?>" autocomplete="new-password" />
+                        <input type="password" id="loginPassword" required name="password" class="form-control" value="<?= set_value('password')?>"
+                            autocomplete="new-password" />
                         <label class="form-label" for="loginPassword">Password</label>
                     </div>
 

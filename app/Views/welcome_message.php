@@ -20,7 +20,7 @@
                     <button type="button" class="btn btn-outline-primary m-2">Update my Profile</button>
                 </div>
 
-<hr>
+                <hr>
                 <div class="container text-center">
                     <div class="row align-items-start">
                         <div class="col">

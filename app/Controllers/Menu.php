@@ -174,6 +174,8 @@ public function newspec(): string
         return view('templates/header') . view('Pages/successpec');
     }
 
+    
+
     public function statuses(): string
     {
         return view('templates/header')

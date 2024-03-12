@@ -12,7 +12,7 @@ usort($counties, function($a, $b) {
 
 
 <div class="position-absolute top-50 start-50 translate-middle">
-    <div class="card shadow-lg overflow-auto" id="card" style="width: 70rem; height: 50rem;">
+    <div class="card shadow-lg overflow-auto" id="card" style="width: 70rem; height:70vh;">
         <div class="d-flex justify-content-between card-title sticky-top bg-dark rounded text-light shadow-lg">
             <h4 class='m-2'>Counties</h4>
 
